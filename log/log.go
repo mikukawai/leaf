@@ -107,7 +107,7 @@ func (logger *Logger) doPrintf(level int, printLevel string, format string, a ..
 	}
 
 	format = printLevel + format
-	format = fmt.Sprintf("%s %s %s", time.Now().Format("2006-01-02 15:04:05"), src, format)
+	format = fmt.Sprintf("%s %s", src, format)
 	logger.baseLogger.Output(3, fmt.Sprintf(format, a...))
 
 	if level == fatalLevel {
