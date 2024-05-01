@@ -4,9 +4,10 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"reflect"
+
 	"github.com/mikukawai/leaf/chanrpc"
 	"github.com/mikukawai/leaf/log"
-	"reflect"
 )
 
 type Processor struct {

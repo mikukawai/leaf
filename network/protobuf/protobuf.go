@@ -4,11 +4,12 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
-	"github.com/golang/protobuf/proto"
-	"github.com/mikukawai/leaf/chanrpc"
-	"github.com/mikukawai/leaf/log"
 	"math"
 	"reflect"
+
+	"github.com/mikukawai/leaf/chanrpc"
+	"github.com/mikukawai/leaf/log"
+	"google.golang.org/protobuf/proto"
 )
 
 // -------------------------

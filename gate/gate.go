@@ -1,12 +1,13 @@
 package gate
 
 import (
-	"github.com/mikukawai/leaf/chanrpc"
-	"github.com/mikukawai/leaf/log"
-	"github.com/mikukawai/leaf/network"
 	"net"
 	"reflect"
 	"time"
+
+	"github.com/mikukawai/leaf/chanrpc"
+	"github.com/mikukawai/leaf/log"
+	"github.com/mikukawai/leaf/network"
 )
 
 type Gate struct {
