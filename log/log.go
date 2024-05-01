@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"path"
+	"runtime"
 	"strings"
 	"time"
 )
@@ -99,7 +100,15 @@ func (logger *Logger) doPrintf(level int, printLevel string, format string, a ..
 		panic("logger closed")
 	}
 
+	_, file, lineno, ok := runtime.Caller(2)
+	src := ""
+	if ok {
+		src = fmt.Sprintf("%s:%d", file, lineno)
+	}
+
 	format = printLevel + format
+	format = fmt.Sprintf("%s %s\n", time.Now().Format("2006-01-02 15:04:05"), format)
+	format = fmt.Sprintf("%s %s", format, src)
 	logger.baseLogger.Output(3, fmt.Sprintf(format, a...))
 
 	if level == fatalLevel {
