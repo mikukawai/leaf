@@ -152,7 +152,7 @@ func (p *Processor) Unmarshal(data []byte) (interface{}, error) {
 		return MsgRaw{id, data[2:]}, nil
 	} else {
 		msg := reflect.New(i.msgType.Elem()).Interface()
-		return msg, proto.UnmarshalMerge(data[2:], msg.(proto.Message))
+		return msg, proto.Unmarshal(data[2:], msg.(proto.Message))
 	}
 }
 
